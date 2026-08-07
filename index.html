@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artinormee - Penawaran Resmi & Diskon Khusus</title>
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        /* Header / Banner */
+        .header {
+            background: linear-gradient(135deg, #2b78c5, #4a90e2);
+            color: white;
+            text-align: center;
+            padding: 25px 20px;
+        }
+
+        .header h1 {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        /* Banner Peringatan / Diskon */
+        .alert-banner {
+            background-color: #fff3cd;
+            color: #856404;
+            text-align: center;
+            padding: 12px;
+            font-weight: bold;
+            font-size: 15px;
+            border-bottom: 1px solid #ffeeba;
+        }
+
+        /* Area Konten Utama */
+        .content {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .content h2 {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .description {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        /* Gambar Produk */
+        .product-image {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            margin: 0 auto 25px auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Manfaat / Keuntungan */
+        .benefits-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid #4a90e2;
+            padding: 20px;
+            text-align: left;
+            margin-bottom: 30px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .benefits-box ul {
+            list-style-type: none;
+        }
+
+        .benefits-box ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .benefits-box ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* Harga */
+        .pricing {
+            margin: 20px 0 30px 0;
+            padding: 20px;
+            border: 2px solid #e74c3c;
+            border-radius: 10px;
+            background-color: #fffcfc;
+        }
+
+        .price-label {
+            font-size: 14px;
+            color: #7f8c8d;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #95a5a6;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .new-price {
+            color: #e74c3c;
+            font-size: 36px;
+            font-weight: 800;
+        }
+
+        /* Tombol CTA */
+        .cta-button {
+            display: block;
+            width: 100%;
+            background: linear-gradient(180deg, #ff6b6b, #e74c3c);
+            color: white;
+            text-align: center;
+            padding: 18px 20px;
+            text-decoration: none;
+            font-size: 22px;
+            font-weight: bold;
+            border-radius: 8px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+            transition: all 0.3s ease;
+            margin-bottom: 15px;
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(180deg, #ff5252, #c0392b);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.5);
+        }
+
+        .secure-checkout {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            color: #27ae60;
+            font-weight: 600;
+        }
+
+        .secure-checkout svg {
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            fill: currentColor;
+        }
+
+        /* Footer & Kebijakan Google Ads */
+        .footer {
+            background-color: #f4f6f7;
+            padding: 25px 20px;
+            text-align: center;
+            border-top: 1px solid #e1e8ed;
+            font-size: 11px;
+            color: #7f8c8d;
+        }
+
+        .disclaimer {
+            margin-bottom: 15px;
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        .footer-links {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #4a90e2;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsif untuk Seluler */
+        @media (max-width: 600px) {
+            .container {
+                margin: 0;
+                border-radius: 0;
+            }
+            .content {
+                padding: 20px;
+            }
+            .new-price {
+                font-size: 32px;
+            }
+            .cta-button {
+                font-size: 18px;
+            }
+            .product-image {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Artinormee Resmi</h1>
+            <p>Dukung Gaya Hidup Sehat Anda Hari Ini</p>
+        </header>
+
+        <!-- Banner Diskon -->
+        <div class="alert-banner">
+            Perhatian: Anda telah diundang ke halaman penawaran khusus dengan Diskon 50%.
+        </div>
+
+        <!-- Konten Utama -->
+        <div class="content">
+            <h2>Langkah Terakhir untuk Mengklaim Pesanan Anda</h2>
+            <p class="description">
+                Terima kasih atas minat Anda pada <strong>Artinormee</strong>. Sebagai bentuk apresiasi, kami memberikan penawaran terbatas khusus untuk Anda. Pesan sekarang melalui situs web resmi untuk memastikan Anda menerima produk asli.
+            </p>
+
+            <!-- Gambar Produk -->
+            <img src="Artinromeee.jpeg" alt="Suplemen Artinormee Asli" class="product-image">
+
+            <!-- Manfaat -->
+            <div class="benefits-box">
+                <p style="font-weight: bold; margin-bottom: 10px; color: #2c3e50;">Mengapa Memilih Halaman Resmi Ini?</p>
+                <ul>
+                    <li>100% Produk Asli & Kualitas Terjamin.</li>
+                    <li>Membantu memelihara kesehatan secara optimal.</li>
+                    <li>Diformulasikan dengan bahan-bahan pilihan.</li>
+                    <li>Diskon 50% eksklusif untuk pesanan hari ini.</li>
+                </ul>
+            </div>
+
+            <!-- Harga -->
+            <div class="pricing">
+                <div class="price-label">Penawaran Spesial Hari Ini</div>
+                <div class="old-price">Harga Normal: 780.000 IDR</div>
+                <div class="new-price">390.000 IDR</div>
+                <p style="font-size: 13px; color: #7f8c8d; margin-top: 5px;">(Sudah termasuk diskon 50%)</p>
+            </div>
+
+            <!-- Tombol Aksi CTA -->
+            <a href="https://pgx6d.doctorluckysh.com/l" class="cta-button">
+                PESAN SEKARANG - KLIK DI SINI
+            </a>
+            
+            <!-- Keamanan Checkout -->
+            <div class="secure-checkout">
+                <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 19.93V2.9l7 3.11v4.99c0 4.67-2.92 9.07-7 10.03zM17 9.59L15.59 8.18 11 12.77 8.41 10.18 7 11.59l4 4 6-6z"/></svg>
+                Checkout Aman & Terenkripsi
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="disclaimer">
+                <strong>Disclaimer:</strong> Hasil dapat bervariasi pada setiap individu. Produk ini adalah suplemen untuk membantu memelihara kesehatan tubuh dan tidak ditujukan untuk mendiagnosis, merawat, menyembuhkan, atau mencegah penyakit apa pun. Pastikan berkonsultasi dengan profesional kesehatan sebelum mengonsumsi suplemen baru.
+            </p>
+            <div class="footer-links">
+                <a href="#privacy">Kebijakan Privasi</a> | 
+                <a href="#terms">Syarat & Ketentuan</a> | 
+                <a href="#contact">Hubungi Kami</a>
+            </div>
+            <p>&copy; 2024 Artinormee Indonesia. Hak Cipta Dilindungi.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
